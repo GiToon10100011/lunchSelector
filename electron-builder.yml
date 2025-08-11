@@ -1,0 +1,46 @@
+appId: com.lunchrecommender.app
+productName: 점심메뉴 추천기
+copyright: Copyright © 2025
+
+directories:
+  output: dist
+  buildResources: build
+
+files:
+  - electron/**/*
+  - out/**/*
+  - package.json
+
+extraResources:
+  - public/
+
+mac:
+  category: public.app-category.utilities
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: public/placeholder-logo.png
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+        - ia32
+  icon: public/placeholder-logo.png
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+  icon: public/placeholder-logo.png
+  category: Utility
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  installerIcon: public/placeholder-logo.png
+  uninstallerIcon: public/placeholder-logo.png
