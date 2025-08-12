@@ -38,14 +38,6 @@ export const metadata: Metadata = {
     description: '오늘 뭐 먹을지 고민될 때! 랜덤 메뉴 추천 앱',
     images: ['/luncher-icon.png'],
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
-  themeColor: '#f97316',
-  colorScheme: 'light',
   robots: {
     index: true,
     follow: true,
@@ -57,6 +49,17 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+}
+
+export function generateViewport() {
+  return {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    themeColor: '#f97316',
+    colorScheme: 'light',
+  }
 }
 
 export default function RootLayout({
