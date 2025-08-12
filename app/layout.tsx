@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     { name: 'Developer' }
   ],
   creator: 'Developer',
-  metadataBase: new URL('https://lunch-recommender.vercel.app'),
+  metadataBase: new URL('https://lunch-selector-eta.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://lunch-recommender.vercel.app',
+    url: 'https://lunch-selector-eta.vercel.app',
     title: '점심메뉴 추천기',
     description: '오늘 뭐 먹을지 고민될 때! 랜덤 메뉴 추천 앱',
     siteName: '점심메뉴 추천기',
