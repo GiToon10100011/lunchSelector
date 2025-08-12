@@ -52,8 +52,8 @@ linux:
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true
-  installerIcon: public/placeholder-logo.png
-  uninstallerIcon: public/placeholder-logo.png
+  installerIcon: public/luncher-icon.png
+  uninstallerIcon: public/luncher-icon.png
   deleteAppDataOnUninstall: false
   createDesktopShortcut: always
   createStartMenuShortcut: true
