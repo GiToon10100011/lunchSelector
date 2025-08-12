@@ -100,7 +100,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            artifacts/dist-macos-latest/*Luncher*.dmg
+            artifacts/dist-macos-latest/*.dmg
             artifacts/dist-macos-latest/*.dmg.blockmap
             artifacts/dist-macos-latest/latest-mac.yml
             artifacts/dist-windows-latest/*.exe
