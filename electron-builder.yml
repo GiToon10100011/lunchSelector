@@ -28,8 +28,8 @@ win:
     - target: nsis
       arch:
         - x64
-        - ia32
   icon: public/placeholder-logo.png
+  requestedExecutionLevel: asInvoker
 
 linux:
   target:
@@ -44,3 +44,6 @@ nsis:
   allowToChangeInstallationDirectory: true
   installerIcon: public/placeholder-logo.png
   uninstallerIcon: public/placeholder-logo.png
+  deleteAppDataOnUninstall: false
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
