@@ -58,6 +58,9 @@ function createEmojiIcon() {
   // PNG용으로도 복사 (일단 SVG를 PNG 확장자로)
   fs.writeFileSync(path.join(__dirname, '../public/luncher-icon.png'), svg);
   
+  console.log('📝 SVG 아이콘을 PNG로 변환하려면 다음 명령어를 실행하세요:');
+  console.log('rsvg-convert -w 512 -h 512 public/luncher-icon.svg -o public/luncher-icon-real.png');
+  
   console.log('🍽️ 귀여운 음식 아이콘이 생성되었습니다!');
 }
 

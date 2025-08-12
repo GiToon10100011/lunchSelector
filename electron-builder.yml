@@ -24,7 +24,7 @@ mac:
     - target: dmg  
       arch:
         - arm64
-  icon: public/luncher-icon.png
+  icon: public/luncher-icon.icns
   # Disable code signing for development/testing
   identity: null
   # 코드 서명 (Apple 개발자 계정 필요)
@@ -38,7 +38,7 @@ win:
     - target: nsis
       arch:
         - x64
-  icon: public/luncher-icon.png
+  icon: public/luncher-icon-real.png
   requestedExecutionLevel: asInvoker
 
 linux:
@@ -46,14 +46,14 @@ linux:
     - target: AppImage
       arch:
         - x64
-  icon: public/luncher-icon.png
+  icon: public/luncher-icon-real.png
   category: Utility
 
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true
-  installerIcon: public/luncher-icon.png
-  uninstallerIcon: public/luncher-icon.png
+  installerIcon: public/luncher-icon-real.png
+  uninstallerIcon: public/luncher-icon-real.png
   deleteAppDataOnUninstall: false
   createDesktopShortcut: always
   createStartMenuShortcut: true

@@ -14,7 +14,7 @@ function createWindow() {
       enableRemoteModule: false,
       webSecurity: true
     },
-    icon: path.join(__dirname, '../public/luncher-icon.png'),
+    icon: path.join(__dirname, '../public/luncher-icon.icns'),
     titleBarStyle: process.platform === 'darwin' ? 'hiddenInset' : 'default',
     show: false
   })
