@@ -1,0 +1,37 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 원 -->
+  <circle cx="256" cy="256" r="240" fill="#FF6B6B" stroke="#E74C3C" stroke-width="8"/>
+  
+  <!-- 내부 원 -->
+  <circle cx="256" cy="256" r="200" fill="#FFE66D" stroke="#F39C12" stroke-width="4"/>
+  
+  <!-- 접시 -->
+  <ellipse cx="256" cy="300" rx="120" ry="15" fill="#E8E8E8"/>
+  <ellipse cx="256" cy="295" rx="120" ry="8" fill="#F5F5F5"/>
+  
+  <!-- 햄버거 -->
+  <ellipse cx="256" cy="220" rx="80" ry="12" fill="#D2691E"/>
+  <ellipse cx="256" cy="235" rx="75" ry="8" fill="#228B22"/>
+  <ellipse cx="256" cy="250" rx="70" ry="15" fill="#8B4513"/>
+  <ellipse cx="256" cy="270" rx="75" ry="8" fill="#FFD700"/>
+  <ellipse cx="256" cy="285" rx="80" ry="12" fill="#D2691E"/>
+  
+  <!-- 포크 -->
+  <g transform="translate(180,180) rotate(-30)">
+    <rect x="0" y="0" width="4" height="80" fill="#C0C0C0"/>
+    <rect x="-3" y="0" width="2" height="15" fill="#C0C0C0"/>
+    <rect x="1" y="0" width="2" height="15" fill="#C0C0C0"/>
+    <rect x="5" y="0" width="2" height="15" fill="#C0C0C0"/>
+  </g>
+  
+  <!-- 나이프 -->
+  <g transform="translate(330,180) rotate(30)">
+    <rect x="0" y="0" width="3" height="80" fill="#C0C0C0"/>
+    <polygon points="0,0 15,5 15,15 0,10" fill="#C0C0C0"/>
+  </g>
+  
+  <!-- 하트 (사랑스러운 느낌) -->
+  <g transform="translate(256,150)">
+    <path d="M0,10 C0,5 5,0 10,0 C15,0 20,5 20,10 C20,15 10,25 0,30 C-10,25 -20,15 -20,10 C-20,5 -15,0 -10,0 C-5,0 0,5 0,10 Z" fill="#FF69B4"/>
+  </g>
+</svg>

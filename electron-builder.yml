@@ -10,6 +10,7 @@ files:
   - electron/**/*
   - out/**/*
   - package.json
+  - node_modules/**/*
 
 extraResources:
   - public/
@@ -23,14 +24,21 @@ mac:
     - target: dmg  
       arch:
         - arm64
-  icon: public/placeholder-logo.png
+  icon: public/luncher-icon.png
+  # Disable code signing for development/testing
+  identity: null
+  # 코드 서명 (Apple 개발자 계정 필요)
+  # identity: "Developer ID Application: Your Name (TEAM_ID)"
+  # hardenedRuntime: true
+  # gatekeeperAssess: false
+  # notarize: true
 
 win:
   target:
     - target: nsis
       arch:
         - x64
-  icon: public/placeholder-logo.png
+  icon: public/luncher-icon.png
   requestedExecutionLevel: asInvoker
 
 linux:
@@ -38,7 +46,7 @@ linux:
     - target: AppImage
       arch:
         - x64
-  icon: public/placeholder-logo.png
+  icon: public/luncher-icon.png
   category: Utility
 
 nsis:

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>아이콘 생성</title>
+</head>
+<body>
+    <canvas id="canvas" width="512" height="512"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // 배경 - 따뜻한 그라데이션
+        const gradient = ctx.createRadialGradient(256, 256, 0, 256, 256, 256);
+        gradient.addColorStop(0, '#FFF5E6');
+        gradient.addColorStop(1, '#FFE4B5');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 512, 512);
+        
+        // 원형 배경
+        ctx.beginPath();
+        ctx.arc(256, 256, 230, 0, 2 * Math.PI);
+        ctx.fillStyle = '#FF6B6B';
+        ctx.fill();
+        
+        // 내부 원
+        ctx.beginPath();
+        ctx.arc(256, 256, 200, 0, 2 * Math.PI);
+        ctx.fillStyle = '#FFE66D';
+        ctx.fill();
+        
+        // 음식 이모지 그리기
+        ctx.font = '200px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#2C3E50';
+        
+        // 🍽️ 이모지
+        ctx.fillText('🍽️', 256, 256);
+        
+        // 다운로드 링크 생성
+        const link = document.createElement('a');
+        link.download = 'app-icon.png';
+        link.href = canvas.toDataURL();
+        link.textContent = '아이콘 다운로드';
+        link.style.fontSize = '20px';
+        link.style.display = 'block';
+        link.style.marginTop = '20px';
+        document.body.appendChild(link);
+        
+        // 자동 다운로드
+        link.click();
+    </script>
+</body>
+</html>

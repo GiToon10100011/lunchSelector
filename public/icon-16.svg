@@ -1,0 +1,49 @@
+
+<svg width="16" height="16" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 그라데이션 -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFE66D"/>
+      <stop offset="100%" style="stop-color:#FF6B6B"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 원형 배경 -->
+  <circle cx="256" cy="256" r="240" fill="url(#bg)" stroke="#E74C3C" stroke-width="16"/>
+  
+  <!-- 그림자 -->
+  <circle cx="256" cy="270" r="200" fill="rgba(0,0,0,0.1)"/>
+  
+  <!-- 메인 아이콘 영역 -->
+  <circle cx="256" cy="256" r="200" fill="#FFF" stroke="#E8E8E8" stroke-width="8"/>
+  
+  <!-- 접시 -->
+  <ellipse cx="256" cy="320" rx="140" ry="20" fill="#F0F0F0"/>
+  <ellipse cx="256" cy="315" rx="140" ry="12" fill="#FFF"/>
+  
+  <!-- 밥그릇 -->
+  <ellipse cx="200" cy="280" rx="35" ry="40" fill="#FFE4B5"/>
+  <ellipse cx="200" cy="270" rx="35" ry="8" fill="#FFF"/>
+  <circle cx="200" cy="250" r="25" fill="#F5DEB3"/>
+  
+  <!-- 반찬들 -->
+  <circle cx="280" cy="260" r="20" fill="#FF6347"/>
+  <circle cx="320" cy="280" r="15" fill="#32CD32"/>
+  <circle cx="300" cy="300" r="12" fill="#FFD700"/>
+  
+  <!-- 젓가락 -->
+  <rect x="160" y="200" width="3" height="60" fill="#8B4513" transform="rotate(-15 160 200)"/>
+  <rect x="166" y="200" width="3" height="60" fill="#8B4513" transform="rotate(-15 166 200)"/>
+  
+  <!-- 하트 -->
+  <g transform="translate(256,180) scale(0.8)">
+    <path d="M0,10 C0,5 5,0 10,0 C15,0 20,5 20,10 C20,15 10,25 0,30 C-10,25 -20,15 -20,10 C-20,5 -15,0 -10,0 C-5,0 0,5 0,10 Z" fill="#FF69B4"/>
+  </g>
+  
+  <!-- 스팀 효과 -->
+  <g opacity="0.6">
+    <path d="M180 220 Q185 210 180 200 Q175 210 180 220" stroke="#87CEEB" stroke-width="2" fill="none"/>
+    <path d="M190 215 Q195 205 190 195 Q185 205 190 215" stroke="#87CEEB" stroke-width="2" fill="none"/>
+    <path d="M210 225 Q215 215 210 205 Q205 215 210 225" stroke="#87CEEB" stroke-width="2" fill="none"/>
+  </g>
+</svg>

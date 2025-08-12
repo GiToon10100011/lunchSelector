@@ -10,7 +10,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "export": "next build",
+    "export": "next build && node scripts/fix-paths.js",
     "electron": "cross-env NODE_ENV=development concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
     "electron:build": "npm run export && cross-env NODE_ENV=production electron .",
     "dist": "npm run export && electron-builder",
@@ -87,7 +87,7 @@
   },
   "build": {
     "appId": "com.lunchrecommender.app",
-    "productName": "점심메뉴 추천기",
+    "productName": "Luncher",
     "npmRebuild": false,
     "directories": {
       "output": "dist"

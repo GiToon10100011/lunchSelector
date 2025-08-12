@@ -14,7 +14,7 @@ function createWindow() {
       enableRemoteModule: false,
       webSecurity: true
     },
-    icon: path.join(__dirname, '../public/placeholder-logo.png'),
+    icon: path.join(__dirname, '../public/luncher-icon.png'),
     titleBarStyle: process.platform === 'darwin' ? 'hiddenInset' : 'default',
     show: false
   })
@@ -25,7 +25,8 @@ function createWindow() {
     // Open DevTools in development
     mainWindow.webContents.openDevTools()
   } else {
-    mainWindow.loadFile(path.join(__dirname, '../out/index.html'))
+    const indexPath = path.join(__dirname, '../out/index.html')
+    mainWindow.loadFile(indexPath)
   }
 
   // Show window when ready to prevent visual flash
