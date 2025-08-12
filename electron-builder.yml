@@ -24,7 +24,7 @@ mac:
     - target: dmg  
       arch:
         - arm64
-  icon: public/luncher-icon.icns
+  icon: build/icon.png
   # Disable code signing for development/testing
   identity: null
   # 코드 서명 (Apple 개발자 계정 필요)
