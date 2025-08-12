@@ -92,9 +92,14 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            artifacts/dist-macos-latest/*
-            artifacts/dist-windows-latest/*
-            artifacts/dist-ubuntu-latest/*
+            artifacts/dist-macos-latest/*.dmg
+            artifacts/dist-macos-latest/*.dmg.blockmap
+            artifacts/dist-macos-latest/latest-mac.yml
+            artifacts/dist-windows-latest/*.exe
+            artifacts/dist-windows-latest/*.exe.blockmap
+            artifacts/dist-windows-latest/latest.yml
+            artifacts/dist-ubuntu-latest/*.AppImage
+            artifacts/dist-ubuntu-latest/latest-linux.yml
           draft: false
           prerelease: false
           generate_release_notes: true
