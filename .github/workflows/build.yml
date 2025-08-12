@@ -40,9 +40,17 @@ jobs:
       - name: Build Next.js app
         run: npm run export
 
-      - name: Build Electron app (macOS)
+      - name: Build Electron app (macOS - x64)
         if: matrix.os == 'macos-latest'
-        run: npx electron-builder --mac --publish=never
+        run: npx electron-builder --mac --x64 --publish=never
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npm_config_cache: .npm
+          ELECTRON_BUILDER_CACHE: .cache
+
+      - name: Build Electron app (macOS - arm64)
+        if: matrix.os == 'macos-latest'
+        run: npx electron-builder --mac --arm64 --publish=never
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           npm_config_cache: .npm
@@ -92,7 +100,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            artifacts/dist-macos-latest/*.dmg
+            artifacts/dist-macos-latest/*Luncher*.dmg
             artifacts/dist-macos-latest/*.dmg.blockmap
             artifacts/dist-macos-latest/latest-mac.yml
             artifacts/dist-windows-latest/*.exe
