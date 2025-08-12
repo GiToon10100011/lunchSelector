@@ -25,6 +25,11 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
@@ -36,6 +41,8 @@ jobs:
         run: npx electron-builder --mac --publish=never
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npm_config_cache: .npm
+          ELECTRON_BUILDER_CACHE: .cache
 
       - name: Build Electron app (Windows)
         if: matrix.os == 'windows-latest'
@@ -43,12 +50,16 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CI: true
+          npm_config_cache: .npm
+          ELECTRON_BUILDER_CACHE: .cache
 
       - name: Build Electron app (Linux)
         if: matrix.os == 'ubuntu-latest'
         run: npx electron-builder --linux --publish=never
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npm_config_cache: .npm
+          ELECTRON_BUILDER_CACHE: .cache
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

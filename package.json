@@ -1,6 +1,8 @@
 {
   "name": "lunch-recommender",
   "version": "0.1.0",
+  "description": "Korean lunch menu recommender desktop app",
+  "author": "Developer",
   "private": true,
   "main": "electron/main.js",
   "scripts": {
@@ -86,6 +88,7 @@
   "build": {
     "appId": "com.lunchrecommender.app",
     "productName": "점심메뉴 추천기",
+    "npmRebuild": false,
     "directories": {
       "output": "dist"
     },
