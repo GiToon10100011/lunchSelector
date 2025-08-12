@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PWA Debug Tool</title>
+</head>
+<body>
+    <h1>PWA 설치 조건 체크</h1>
+    <div id="results"></div>
+
+    <script>
+        function checkPWA() {
+            const results = document.getElementById('results');
+            let html = '<h2>PWA 조건 체크 결과:</h2>';
+
+            // 1. HTTPS 체크
+            html += `<p>🔒 HTTPS: ${location.protocol === 'https:' ? '✅' : '❌'}</p>`;
+
+            // 2. Service Worker 체크
+            html += `<p>⚙️ Service Worker 지원: ${'serviceWorker' in navigator ? '✅' : '❌'}</p>`;
+
+            // 3. Manifest 체크
+            const manifestLink = document.querySelector('link[rel="manifest"]');
+            html += `<p>📄 Manifest 링크: ${manifestLink ? '✅' : '❌'}</p>`;
+
+            // 4. beforeinstallprompt 이벤트 체크
+            let installPromptAvailable = false;
+            window.addEventListener('beforeinstallprompt', (e) => {
+                installPromptAvailable = true;
+                html += `<p>📱 설치 프롬프트: ✅ 사용 가능</p>`;
+                results.innerHTML = html;
+            });
+
+            // 5. 플랫폼 체크
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const isSafari = /Safari/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent);
+
+            html += `<p>📱 플랫폼: ${isAndroid ? 'Android' : isIOS ? 'iOS' : 'Desktop'}</p>`;
+            html += `<p>🌐 브라우저: ${isSafari ? 'Safari' : 'Chrome/Other'}</p>`;
+
+            if (isIOS && !isSafari) {
+                html += `<p>⚠️ iOS에서는 Safari만 PWA 설치 가능</p>`;
+            }
+
+            // 초기 결과 표시
+            setTimeout(() => {
+                if (!installPromptAvailable) {
+                    html += `<p>📱 설치 프롬프트: ❌ 사용 불가</p>`;
+                    if (isAndroid) {
+                        html += `<p>💡 Android Chrome에서 주소창 옆 아이콘 확인하세요</p>`;
+                    }
+                }
+                results.innerHTML = html;
+            }, 1000);
+
+            results.innerHTML = html;
+        }
+
+        // 페이지 로드 시 체크
+        window.addEventListener('load', checkPWA);
+    </script>
+</body>
+</html>

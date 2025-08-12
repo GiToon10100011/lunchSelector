@@ -20,14 +20,18 @@ export function usePWA() {
     // Register service worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        const swUrl = process.env.NODE_ENV === 'production' ? '/sw.js' : '/sw.js'
+        navigator.serviceWorker.register(swUrl)
           .then(registration => {
             console.log('SW registered: ', registration)
           })
           .catch(registrationError => {
             console.log('SW registration failed: ', registrationError)
+            console.error('Service Worker registration failed:', registrationError)
           })
       })
+    } else {
+      console.log('Service Worker not supported')
     }
 
     // Check if app is already installed

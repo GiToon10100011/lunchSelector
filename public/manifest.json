@@ -2,7 +2,7 @@
   "name": "점심메뉴 추천기",
   "short_name": "점심추천",
   "description": "오늘 뭐 먹을지 고민될 때! 랜덤 메뉴 추천 앱",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#f97316",
