@@ -7,10 +7,11 @@
   "main": "electron/main.js",
   "scripts": {
     "build": "next build",
+    "build:vercel": "next build",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "export": "next build && node scripts/fix-paths.js",
+    "export": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true next build && node scripts/fix-paths.js",
     "electron": "cross-env NODE_ENV=development concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
     "electron:build": "npm run export && cross-env NODE_ENV=production electron .",
     "dist": "npm run export && electron-builder",

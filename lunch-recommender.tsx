@@ -16,7 +16,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Trash2, Plus, Shuffle, Check, History, Settings, Edit } from "lucide-react"
+import { Trash2, Plus, Shuffle, Check, History, Settings, Edit, Download } from "lucide-react"
+import { usePWA } from "@/hooks/use-pwa"
 
 interface MealRecord {
   id: string
@@ -48,6 +49,9 @@ export default function LunchRecommender() {
   const [showManageDialog, setShowManageDialog] = useState(false)
   const [showHistoryDialog, setShowHistoryDialog] = useState(false)
   const [showConfirmDialog, setShowConfirmDialog] = useState(false)
+  
+  // PWA 기능
+  const { isInstallable, isInstalled, installPWA } = usePWA()
   const [editingRecord, setEditingRecord] = useState<MealRecord | null>(null)
   const [showEditDialog, setShowEditDialog] = useState(false)
   const [editMenu, setEditMenu] = useState("")
@@ -273,7 +277,15 @@ export default function LunchRecommender() {
         )}
 
         {/* 액션 버튼들 */}
-        <div className="flex gap-3 justify-center">
+        <div className="flex gap-3 justify-center flex-wrap">
+          {/* PWA 설치 버튼 */}
+          {isInstallable && !isInstalled && (
+            <Button variant="outline" onClick={installPWA} className="bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100">
+              <Download className="w-4 h-4 mr-2" />
+              앱 설치
+            </Button>
+          )}
+          
           <Dialog open={showManageDialog} onOpenChange={setShowManageDialog}>
             <DialogTrigger asChild>
               <Button variant="outline">
