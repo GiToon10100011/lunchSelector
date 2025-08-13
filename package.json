@@ -1,6 +1,6 @@
 {
   "name": "lunch-recommender",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "Korean lunch menu recommender desktop app",
   "author": "Developer",
   "private": true,
@@ -12,12 +12,13 @@
     "lint": "next lint",
     "start": "next start",
     "export": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true next build && node scripts/fix-paths.js",
+    "prepare-icons": "node scripts/create-build-icons.js",
     "electron": "cross-env NODE_ENV=development concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
     "electron:build": "npm run export && cross-env NODE_ENV=production electron .",
-    "dist": "npm run export && electron-builder",
-    "dist:mac": "npm run export && electron-builder --mac",
-    "dist:win": "npm run export && electron-builder --win",
-    "dist:linux": "npm run export && electron-builder --linux"
+    "dist": "npm run export && npm run prepare-icons && electron-builder",
+    "dist:mac": "npm run export && npm run prepare-icons && electron-builder --mac",
+    "dist:win": "npm run export && npm run prepare-icons && electron-builder --win",
+    "dist:linux": "npm run export && npm run prepare-icons && electron-builder --linux"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

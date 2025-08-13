@@ -40,6 +40,9 @@ jobs:
       - name: Build Next.js app
         run: npm run export
 
+      - name: Prepare icons for electron-builder
+        run: npm run prepare-icons
+
       - name: Build Electron app (macOS - x64)
         if: matrix.os == 'macos-latest'
         run: npx electron-builder --mac --x64 --publish=never
